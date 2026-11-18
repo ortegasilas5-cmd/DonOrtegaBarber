@@ -1,0 +1,45 @@
+﻿@model SalaoBeleza.Models.Cliente
+
+@{
+    ViewData["Title"] = "Excluir Cliente";
+}
+
+<h1>Excluir Cliente</h1>
+
+<h4>Tem certeza de que deseja excluir este cliente?</h4>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+
+        <dl class="row">
+            <dt class="col-sm-4">Código</dt>
+            <dd class="col-sm-8">@Model.id_cliente</dd>
+
+            <dt class="col-sm-4">Nome</dt>
+            <dd class="col-sm-8">@Model.nome</dd>
+
+            <dt class="col-sm-4">Telefone</dt>
+            <dd class="col-sm-8">@(Model.telefone ?? "Não informado")</dd>
+
+            <dt class="col-sm-4">Data de nascimento</dt>
+            <dd class="col-sm-8">
+                @(Model.data_nascimento?.ToString("dd/MM/yyyy") ?? "Não informada")
+            </dd>
+        </dl>
+
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="id_cliente" />
+
+            <button type="submit" class="btn btn-danger">
+                Confirmar exclusão
+            </button>
+
+            <a asp-action="Index" class="btn btn-secondary">
+                Cancelar
+            </a>
+        </form>
+
+    </div>
+</div>

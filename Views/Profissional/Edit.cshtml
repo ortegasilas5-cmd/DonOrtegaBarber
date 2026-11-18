@@ -1,0 +1,48 @@
+﻿@model SalaoBeleza.Models.Profissional
+
+@{
+    ViewData["Title"] = "Editar Profissional";
+}
+
+<div class="container mt-4">
+
+    <h2>Editar Profissional</h2>
+    <p>Atualize as informações do profissional.</p>
+
+    <form asp-action="Edit" method="post">
+
+        <input type="hidden" asp-for="id_profissional" />
+
+        <div class="mb-3">
+            <label asp-for="nome" class="form-label">Nome do Profissional</label>
+            <input asp-for="nome" class="form-control" />
+            <span asp-validation-for="nome" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="especialidade" class="form-label">Especialidade</label>
+            <input asp-for="especialidade" class="form-control" />
+            <span asp-validation-for="especialidade" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="cpf" class="form-label">CPF</label>
+            <input asp-for="cpf" class="form-control" maxlength="11" />
+            <span asp-validation-for="cpf" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Salvar Alterações
+        </button>
+
+        <a asp-action="Index" class="btn btn-secondary">
+            Voltar
+        </a>
+
+    </form>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

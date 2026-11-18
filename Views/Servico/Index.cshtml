@@ -1,0 +1,76 @@
+﻿@model IEnumerable<SalaoBeleza.Models.Servico>
+
+@{
+    ViewData["Title"] = "Serviços";
+}
+
+<div class="container py-5">
+
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+        <div>
+            <span class="section-overline">DON ORTEGA BARBER SHOP</span>
+            <h1 class="mt-2">NOSSOS SERVIÇOS</h1>
+            <p class="text-secondary">Gerencie os serviços oferecidos pela barbearia.</p>
+        </div>
+
+        <a asp-action="Create" class="don-button">
+            + NOVO SERVIÇO
+        </a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-dark table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Serviço</th>
+                    <th>Preço</th>
+                    <th>Duração</th>
+                    <th class="text-end">Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @if (Model.Any())
+                {
+                    foreach (var servico in Model)
+                    {
+                        <tr>
+                            <td>@servico.id_servico</td>
+                            <td>@servico.nome</td>
+                            <td>@servico.preco.ToString("C2", new System.Globalization.CultureInfo("pt-BR"))</td>
+                            <td>@servico.duracao_min min</td>
+
+                            <td class="text-end">
+                                <a asp-action="Edit"
+                                   asp-route-id="@servico.id_servico"
+                                   class="btn btn-sm btn-outline-warning">
+                                    Editar
+                                </a>
+
+                                <a asp-action="Delete"
+                                   asp-route-id="@servico.id_servico"
+                                   class="btn btn-sm btn-outline-danger">
+                                    Excluir
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5" class="text-center py-4">
+                            Nenhum serviço cadastrado ainda.
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <a asp-controller="Home" asp-action="Index" class="btn btn-outline-light mt-3">
+        Voltar ao início
+    </a>
+
+</div>

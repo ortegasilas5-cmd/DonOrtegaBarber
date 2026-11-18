@@ -1,0 +1,41 @@
+﻿@model SalaoBeleza.Models.Servico
+
+@{
+    ViewData["Title"] = "Editar Serviço";
+}
+
+<div class="container mt-4">
+    <h2>Editar Serviço</h2>
+    <p>Atualize as informações do serviço.</p>
+
+    <form asp-action="Edit" method="post">
+
+        <input type="hidden" asp-for="id_servico" />
+
+        <div class="mb-3">
+            <label asp-for="nome" class="form-label">Nome do Serviço</label>
+            <input asp-for="nome" class="form-control" />
+            <span asp-validation-for="nome" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="preco" class="form-label">Preço (R$)</label>
+            <input asp-for="preco" class="form-control" type="number" step="0.01" />
+            <span asp-validation-for="preco" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="duracao_min" class="form-label">Duração (minutos)</label>
+            <input asp-for="duracao_min" class="form-control" type="number" />
+            <span asp-validation-for="duracao_min" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+        <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

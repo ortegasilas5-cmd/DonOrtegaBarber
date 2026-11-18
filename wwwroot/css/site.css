@@ -1,0 +1,391 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --preto: #171717;
+    --preto-suave: #202020;
+    --vinho: #692F32;
+    --dourado: #B38A55;
+    --creme: #E8DDC8;
+    --marrom: #594638;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    background-color: var(--preto);
+    color: var(--creme);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* MENU PRINCIPAL */
+
+.don-navbar {
+    background-color: var(--preto);
+    border-bottom: 1px solid rgba(179, 138, 85, 0.4);
+    padding: 16px 0;
+}
+
+.don-brand {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    margin-right: 30px;
+}
+
+.brand-name {
+    color: var(--dourado);
+    font-family: 'Cinzel', serif;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.brand-subtitle {
+    color: var(--creme);
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.don-navbar .nav-link {
+    color: var(--creme);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0 8px;
+    transition: 0.3s;
+}
+
+    .don-navbar .nav-link:hover {
+        color: var(--dourado);
+    }
+
+.don-navbar .don-nav-button {
+    border: 1px solid var(--dourado);
+    color: var(--dourado);
+    padding: 10px 18px;
+    transition: 0.3s;
+}
+
+    .don-navbar .don-nav-button:hover {
+        background-color: var(--dourado);
+        color: var(--preto);
+    }
+
+/* APRESENTAÇÃO PRINCIPAL */
+
+.hero-section {
+    min-height: 620px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(15, 15, 15, 0.78), rgba(15, 15, 15, 0.88)), url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=2000&q=85') center/cover no-repeat;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 100px 15px;
+}
+
+.hero-overline,
+.section-overline {
+    color: var(--dourado);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+.hero-content h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(48px, 9vw, 100px);
+    font-weight: 700;
+    color: var(--creme);
+    letter-spacing: 5px;
+    margin: 20px 0 0;
+}
+
+    .hero-content h1 span {
+        color: var(--dourado);
+    }
+
+.hero-divider {
+    width: 100px;
+    height: 2px;
+    background-color: var(--dourado);
+    margin: 25px auto;
+}
+
+.hero-content h2 {
+    color: var(--creme);
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    letter-spacing: 9px;
+}
+
+.hero-content p {
+    color: var(--creme);
+    font-size: 16px;
+    line-height: 2;
+    margin: 25px 0 35px;
+}
+
+.don-button {
+    display: inline-block;
+    background-color: var(--dourado);
+    color: var(--preto);
+    text-decoration: none;
+    padding: 15px 28px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    transition: 0.3s;
+}
+
+    .don-button:hover {
+        background-color: var(--creme);
+        color: var(--preto);
+    }
+
+.hero-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 17px;
+    background-color: rgba(0, 0, 0, 0.55);
+    color: var(--dourado);
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+/* SEÇÕES GERAIS */
+
+.about-section,
+.services-section,
+.professionals-section,
+.booking-section {
+    padding: 85px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+    .section-heading h2,
+    .professionals-section h2,
+    .booking-section h2 {
+        font-family: 'Cinzel', serif;
+        font-size: clamp(25px, 4vw, 36px);
+        color: var(--creme);
+        margin-top: 15px;
+        letter-spacing: 2px;
+    }
+
+.heading-line {
+    width: 65px;
+    height: 2px;
+    background-color: var(--dourado);
+    margin: 20px auto;
+}
+
+/* SOBRE A BARBEARIA */
+
+.about-section {
+    background-color: var(--preto-suave);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+    .about-content p {
+        color: #c4b9a7;
+        font-size: 15px;
+        line-height: 2;
+        margin-bottom: 20px;
+    }
+
+/* SERVIÇOS */
+
+.services-section {
+    background-color: var(--preto);
+}
+
+.section-heading > p {
+    color: #bdb3a3;
+    font-size: 14px;
+}
+
+.service-card {
+    height: 100%;
+    min-height: 260px;
+    padding: 35px 28px;
+    background-color: var(--preto-suave);
+    border: 1px solid rgba(179, 138, 85, 0.3);
+    transition: 0.3s;
+}
+
+    .service-card:hover {
+        border-color: var(--dourado);
+        transform: translateY(-6px);
+    }
+
+.service-number {
+    color: var(--dourado);
+    font-family: 'Cinzel', serif;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: var(--creme);
+    font-family: 'Cinzel', serif;
+    font-size: 19px;
+    margin-bottom: 18px;
+}
+
+.service-card p {
+    color: #bdb3a3;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* PROFISSIONAIS */
+
+.professionals-section {
+    background-color: #29201c;
+}
+
+    .professionals-section p,
+    .booking-section p {
+        max-width: 650px;
+        margin: 25px auto 0;
+        color: #c4b9a7;
+        font-size: 14px;
+        line-height: 2;
+    }
+
+/* AGENDAMENTO */
+
+.booking-section {
+    background-color: var(--vinho);
+}
+
+    .booking-section .section-overline {
+        color: var(--creme);
+    }
+
+    .booking-section h2 {
+        margin-top: 20px;
+    }
+
+/* RODAPÉ */
+
+.don-footer {
+    background-color: #101010;
+    padding: 55px 0 30px;
+    border-top: 1px solid rgba(179, 138, 85, 0.35);
+}
+
+    .don-footer h3 {
+        color: var(--dourado);
+        font-family: 'Cinzel', serif;
+        font-size: 30px;
+        letter-spacing: 4px;
+        margin-bottom: 5px;
+    }
+
+    .don-footer p {
+        color: var(--creme);
+        font-size: 11px;
+        letter-spacing: 5px;
+    }
+
+    .don-footer span {
+        color: #bdb3a3;
+        font-size: 13px;
+        font-style: italic;
+    }
+
+.footer-line {
+    width: 60px;
+    height: 1px;
+    background-color: var(--dourado);
+    margin: 25px auto;
+}
+
+.don-footer small {
+    color: #82796d;
+    font-size: 11px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 767px) {
+
+    .don-navbar {
+        padding: 12px 0;
+    }
+
+    .brand-name {
+        font-size: 21px;
+    }
+
+    .don-navbar .navbar-collapse {
+        padding-top: 15px;
+    }
+
+    .don-navbar .nav-link {
+        margin: 5px 0;
+    }
+
+    .don-navbar .don-nav-button {
+        display: inline-block;
+        margin-top: 8px;
+    }
+
+    .hero-section {
+        min-height: 550px;
+    }
+
+    .hero-content {
+        padding: 75px 15px;
+    }
+
+        .hero-content h1 {
+            letter-spacing: 2px;
+        }
+
+        .hero-content h2 {
+            font-size: 16px;
+            letter-spacing: 5px;
+        }
+
+    .hero-overline {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .about-section,
+    .services-section,
+    .professionals-section,
+    .booking-section {
+        padding: 65px 0;
+    }
+
+    .service-card {
+        min-height: auto;
+    }
+}

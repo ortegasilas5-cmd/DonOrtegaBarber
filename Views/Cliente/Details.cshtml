@@ -1,0 +1,38 @@
+﻿@model SalaoBeleza.Models.Cliente
+
+@{
+    ViewData["Title"] = "Detalhes do Cliente";
+}
+
+<h1>Detalhes do Cliente</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+
+        <dl class="row">
+            <dt class="col-sm-4">Código</dt>
+            <dd class="col-sm-8">@Model.id_cliente</dd>
+
+            <dt class="col-sm-4">Nome</dt>
+            <dd class="col-sm-8">@Model.nome</dd>
+
+            <dt class="col-sm-4">Telefone</dt>
+            <dd class="col-sm-8">@(Model.telefone ?? "Não informado")</dd>
+
+            <dt class="col-sm-4">Data de nascimento</dt>
+            <dd class="col-sm-8">
+                @(Model.data_nascimento?.ToString("dd/MM/yyyy") ?? "Não informada")
+            </dd>
+        </dl>
+
+        <div class="mt-3">
+            <a asp-action="Edit" asp-route-id="@Model.id_cliente"
+               class="btn btn-primary">Editar</a>
+
+            <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+        </div>
+
+    </div>
+</div>

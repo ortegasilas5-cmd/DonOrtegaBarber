@@ -1,0 +1,70 @@
+﻿@model SalaoBeleza.Models.Agendamento
+
+@{
+    ViewData["Title"] = "Detalhes do Agendamento";
+}
+
+<div class="container mt-4">
+
+    <h2>Detalhes do Agendamento</h2>
+    <p class="text-muted">Consulte as informações do atendimento.</p>
+
+    <div class="card shadow-sm mt-4">
+        <div class="card-body">
+
+            <dl class="row">
+
+                <dt class="col-sm-3">Cliente:</dt>
+                <dd class="col-sm-9">@Model.Cliente?.nome</dd>
+
+                <dt class="col-sm-3">Profissional:</dt>
+                <dd class="col-sm-9">@Model.Profissional?.nome</dd>
+
+                <dt class="col-sm-3">Serviço:</dt>
+                <dd class="col-sm-9">@Model.Servico?.nome</dd>
+
+                <dt class="col-sm-3">Preço:</dt>
+                <dd class="col-sm-9">
+                    @(Model.Servico?.preco.ToString("C2") ?? "Não informado")
+                </dd>
+
+                <dt class="col-sm-3">Duração:</dt>
+                <dd class="col-sm-9">
+                    @(Model.Servico != null
+                        ? Model.Servico.duracao_min + " minutos"
+                        : "Não informada")
+                </dd>
+
+                <dt class="col-sm-3">Data:</dt>
+                <dd class="col-sm-9">
+                    @Model.data_hora.ToString("dd/MM/yyyy")
+                </dd>
+
+                <dt class="col-sm-3">Horário:</dt>
+                <dd class="col-sm-9">
+                    @Model.data_hora.ToString("HH:mm")
+                </dd>
+
+                <dt class="col-sm-3">Status:</dt>
+                <dd class="col-sm-9">@Model.status</dd>
+
+            </dl>
+
+            <div class="d-flex gap-2 mt-4">
+
+                <a asp-action="Edit"
+                   asp-route-id="@Model.id_agendamento"
+                   class="btn btn-warning">
+                    Editar
+                </a>
+
+                <a asp-action="Index" class="btn btn-secondary">
+                    Voltar
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

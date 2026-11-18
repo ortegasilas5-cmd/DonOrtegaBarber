@@ -1,0 +1,102 @@
+﻿@model SalaoBeleza.Models.Agendamento
+
+@{
+    ViewData["Title"] = "Editar Agendamento";
+}
+
+<div class="container mt-4">
+
+    <h2>Editar Agendamento</h2>
+    <p class="text-muted">Altere as informações do atendimento.</p>
+
+    <div class="card shadow-sm mt-4">
+        <div class="card-body">
+
+            <form asp-action="Edit" method="post">
+
+                <input type="hidden" asp-for="id_agendamento" />
+
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="id_cliente" class="form-label">Cliente</label>
+
+                    <select asp-for="id_cliente"
+                            asp-items="ViewBag.Clientes"
+                            class="form-select">
+                        <option value="">Selecione um cliente</option>
+                    </select>
+
+                    <span asp-validation-for="id_cliente" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="id_profissional" class="form-label">Profissional</label>
+
+                    <select asp-for="id_profissional"
+                            asp-items="ViewBag.Profissionais"
+                            class="form-select">
+                        <option value="">Selecione um profissional</option>
+                    </select>
+
+                    <span asp-validation-for="id_profissional" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="id_servico" class="form-label">Serviço</label>
+
+                    <select asp-for="id_servico"
+                            asp-items="ViewBag.Servicos"
+                            class="form-select">
+                        <option value="">Selecione um serviço</option>
+                    </select>
+
+                    <span asp-validation-for="id_servico" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="data_hora" class="form-label">Data e horário</label>
+
+                    <input asp-for="data_hora"
+                           type="datetime-local"
+                           class="form-control" />
+
+                    <span asp-validation-for="data_hora" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="status" class="form-label">Status</label>
+
+                    <select asp-for="status" class="form-select">
+                        <option value="agendado">Agendado</option>
+                        <option value="concluido">Concluído</option>
+                        <option value="cancelado">Cancelado</option>
+                    </select>
+
+                    <span asp-validation-for="status" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex gap-2 mt-4">
+
+                    <button type="submit" class="btn btn-dark">
+                        Salvar Alterações
+                    </button>
+
+                    <a asp-action="Index" class="btn btn-secondary">
+                        Voltar
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
